@@ -8,25 +8,25 @@ Este Major Update es una ampliación bastante ambiciosa del Juego. La mayor cara
 
 Se amplía la pantalla de personaje para incluir el inventario.
 ### Características
--   Es posible marcar cualquier objeto del juego como **Item** (Objeto recolectable por el Jugador)
--   Se le puede asignar rareza a un **Item** (Common, Uncommon, Rare, Legendary)
--  Cuando el **Item** está en el piso, muestra un efecto visual en base a su rareza.
--  Es posible configurar un **Item** para que sea “guardable” en el inventario.
--  El inventario muestra todos los **Item** que contiene.
--   Para cada **Item**, si se le pasa el mouse se muestra **Panel de Info,** y si se clickea, se muestran posibles **Acciones** sobre ese objeto.
--   Todos los **Items** guardables tienen la **Acción** por default de poder tirarse al piso. (se reutiliza la funcionalidad que tenía el swap de armas)
--   Armas y Hechizos son **Item** y se pueden cargar múltiples instancias de cada uno.
+-   Es posible marcar cualquier objeto del juego como `Item` (Objeto recolectable por el Jugador)
+-   Se le puede asignar rareza a un `Item` (Common, Uncommon, Rare, Legendary)
+-  Cuando el `Item` está en el piso, muestra un efecto visual en base a su rareza.
+-  Es posible configurar un `Item` para que sea “guardable” en el inventario.
+-  El inventario muestra todos los `Item` que contiene.
+-   Para cada `Item`, si se le pasa el mouse se muestra `Panel de Info,` y si se clickea, se muestran posibles `Acciones` sobre ese objeto.
+-   Todos los `Items` guardables tienen la `Acción` por default de poder tirarse al piso. (se reutiliza la funcionalidad que tenía el swap de armas)
+-   Armas y Hechizos son `Item` y se pueden cargar múltiples instancias de cada uno.
 
 ## Power Ups mediante Sistema de Slots
 
 Para los Items del punto anterior, se habilita la opción de asignarle slots, donde se pueden insertar mejoras. Estas mejoras son, a su vez, otros items.
 ### Características
-- Se puede marcar un **Item** como **Efecto Insertable**. (OnHit, OnKill, Passive)
-- Se puede marcar un **Item** como **Contenedor de Slots**.  (OnHit, OnKill, Passive)
-- Mediante inventario es posible arrastrar los **Efectos Insertables**.
-- Si se suelta el **Insertable** sobre un **Contenedor**, el **Insertable** se elimina del inventario y el **Item Contenedor** gana un bonus.
-- Si el **Item** es un **Contenedor de Slots**, su **Panel de Info** muestra los Slots.
-- Si el **Item** es un **Contenedor de Slots**, por cada Efecto Insertado, se muestra un efecto visual cuando está en piso.
+- Se puede marcar un `Item` como `Efecto Insertable`. (OnHit, OnKill, Passive)
+- Se puede marcar un `Item` como `Contenedor de Slots`.  (OnHit, OnKill, Passive)
+- Mediante inventario es posible arrastrar los `Efectos Insertables`.
+- Si se suelta el `Insertable` sobre un `Contenedor`, el `Insertable` se elimina del inventario y el `Item Contenedor` gana un bonus.
+- Si el `Item` es un `Contenedor de Slots`, su `Panel de Info` muestra los Slots.
+- Si el `Item` es un `Contenedor de Slots`, por cada Efecto Insertado, se muestra un efecto visual cuando está en piso.
 
 
 ## Extensión de Enemigos: Sistema de Drops
@@ -34,12 +34,12 @@ Para los Items del punto anterior, se habilita la opción de asignarle slots, do
 Se implementan tablas de drop dinámicas: Antes cada enemigo tenía hardcodeado el item que dropeaba. No se podía cambiar en runtime.
 
 ### Características
--   Es posible setear diferentes **Perfiles de Drop** a diferentes enemigos (ej: bosses dropean más legendarios y nunca comunes).
--   Dentro de un **Perfil**, es posible asignarles probabilidades a cada **Rareza**.
--  Cada **Rareza** tiene un **Pool** de posibles drops.
+-   Es posible setear diferentes `Perfiles de Drop` a diferentes enemigos (ej: bosses dropean más legendarios y nunca comunes).
+-   Dentro de un `Perfil`, es posible asignarles probabilidades a cada `Rareza`.
+-  Cada `Rareza` tiene un `Pool` de posibles drops.
 -   Es posible setear la condición: “El jugador como máximo verá X items de Y rareza durante la partida”.
 -   Estado centralizado mediante `Singleton`. Los enemigos no necesitan hacer cálculos de probabilidades.
--  La **Rareza** de un **Item** mejora sus stats con valores parcialmente random.
+-  La `Rareza` de un `Item` mejora sus stats con valores parcialmente random.
 
 
 ## Obstáculo: Bulbo Explosivo
@@ -60,5 +60,9 @@ Después de encender las fogatas, el jugador se enfrenta con un nuevo enemigo co
 - El FInal Boss puede disparar un proyectil múltiple.
 - El Final Boss puede atacar en Melee.
 - State Machine dedicado para decidir sus ataques, junto con un componente Random.
-## Misceláneas: Feedback mejorado
-Se implementan numerosos efectos visuales y de sonido para mejorar el feedback de las funcionalidades que ya existían.
+## Misceláneas: Feedback mejorado y Pasivas
+- Se implementan numerosos efectos visuales y de sonido para mejorar el feedback de las funcionalidades que ya existían.
+- Pasivas de lvl 8 y 16: Como los OnHit y OnKill Effects se trasladaron al sistema de Slots, en su lugar ahora se muestran las siguientes mejoras:
+  - "Tu Dash hace daño físico y tiene 50% menos de cooldown"
+  - "Cuando Recolectas Esencia, explota haciendo daño a los enemigos"
+  - "Por cada 1% de vida faltante, haces 0,5% más de daño"
