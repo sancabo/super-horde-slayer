@@ -1,6 +1,7 @@
-# Design Document
+# Horde Slayer Design Document
 > Autor: Santiago Cabo
-
+> 
+![Screenshot del juego donde se muestra el inventario abierto, mostrando la interface](https://storage.googleapis.com/santi-documents/ScreenJuego.png)
 Este Major Update es una ampliación bastante ambiciosa del Juego. La mayor característica que se buscó es la facilidad para implementar más features mediante sistemas modulares y extendibles basados en interfaces.
 
 ## Sistema de inventario
