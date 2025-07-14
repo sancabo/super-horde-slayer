@@ -28,6 +28,17 @@ Para los Items del punto anterior, se habilita la opción de asignarle slots, do
 - Si el `Item` es un `Contenedor de Slots`, su `Panel de Info` muestra los Slots.
 - Si el `Item` es un `Contenedor de Slots`, por cada Efecto Insertado, se muestra un efecto visual cuando está en piso.
 
+### Implementados
+- **On Hit Effect**:  Golpe crítico.
+- **On Hit Effect**:  Prender fuego a los enemigos.
+- **On Hit Effect**:  Knockback.
+- **On Kill Effect**:  Ganar Mana.
+- **On Kill Effect**:  Ganar Vida.
+- **On Kill Effect**:  Explosión en base al HP enemigo.
+- **Passive Effect**:  Incremento de daño.
+- **Passive Effect**:  Cada vez que el objeto afectado ataca, tambien genera un ataque por la espalda.
+- **Passive Effect**:  Mientras que el objeto esté equipado en en L o R Click, otorga aura.
+
 
 ## Extensión de Enemigos: Sistema de Drops
 
@@ -48,6 +59,16 @@ Se implementa un objeto que al ser golpeado y destruído explota dañando todo a
 - Se sobreescribe el perfil de enmigo, para conservar vida, drops, etc, pero modificando su comportamiento.
 - El Bulbo siempre permanece inmóvil en un punto determinado, no emite sonidos, no realiza ataques,  y no persigue al Jugador.
 - Al ser destruído explota dañando al Jugador. ( Se reutiliza la explosión de la bola de fuego)
+- 
+## Nuevo sistema de Spawners
+> [!NOTE]
+> En la version anterior, un `Spawner` generaba enemigos cada x tiempo, con un máximo de enemigos configurable.
+> En ciertos niveles del Jugador, se agregaban más spawners. Se observó en playtesting que los jugadores perdían el sentido de dirección al estar siempre siendo asediados por enemigos, generando una visión de túnel.
+> El nuevo sistema busca dirigir mejor la atención del Jugador, y proveer momentos de descanso (para revisar items, tal vez).
+
+### Características
+- a
+- b
 
 ## Enemigo: Final Boss
 Después de encender las fogatas, el jugador se enfrenta con un nuevo enemigo con comportamiento más complejo
@@ -62,7 +83,14 @@ Después de encender las fogatas, el jugador se enfrenta con un nuevo enemigo co
 - State Machine dedicado para decidir sus ataques, junto con un componente Random.
 ## Misceláneas: Feedback mejorado y Pasivas
 - Se implementan numerosos efectos visuales y de sonido para mejorar el feedback de las funcionalidades que ya existían.
-- Pasivas de lvl 8 y 16: Como los OnHit y OnKill Effects se trasladaron al sistema de Slots, en su lugar ahora se muestran las siguientes mejoras:
+- ### Nuevas Pasivas de lvl 8 y 16
+> [!NOTE]
+> Como algunos efectos otorgados por pasivas se trasladaron al sistema de Slots, en su lugar ahora se agregan las siguientes mejoras
+  - Summon Redesign: El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando todos los bonus de ella.
   - "Tu Dash hace daño físico y tiene 50% menos de cooldown"
   - "Cuando Recolectas Esencia, explota haciendo daño a los enemigos"
   - "Por cada 1% de vida faltante, haces 0,5% más de daño"
+  - "Tu Dash Genera una explosion en los puntos de inicio y fin
+ ### Nuevas Armas
+ - Tridente: Más lento que la lanza, pero genera un abanico de 3 líneas de AOE
+ - Martillo: Súper lento, pero hace daño masivo en un círculo enfrente del portador.
