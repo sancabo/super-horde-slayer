@@ -94,9 +94,19 @@ Se implementan dos modos adicionales de juego.
 - No se limita la cantidad de drops (Excepto por cuestiones de performance)
 - Las fogatas se pueden activar varias veces y su costo aumenta exponencialmente con cada uso.
 - El Modo infinito también aparecerá en el Menu.
-
+- 
+## Enemigo: Bonfire Guardian
+Después de encender cada fogata, Spawnea un nuevo `Enemigo` a modo de mini-boss.
+### Características
+- Nuevo Set de Sprites y Voiceovers
+- Ataca a distancia con un trail que trackea al Jugador.
+- Cuando el trail conecta, en esa posición, luego de un segundo se genera un AOE que hace daño.
+- Si el Jugador se le acerca, intentará escapar con un Dash (Se adapta método Dash del Jugador)
+- El Dash de este enemigo tiene un cooldown a efectos de balance.
+- Se hace más fuerte por cada fogata encendida.
+  
 ## Enemigo: Final Boss
-Después de encender las fogatas, el jugador se enfrenta con un nuevo `Enemigo` con comportamiento más complejo
+Después de encender todas las fogatas, se le indica al jugador que visite un area designada donde se enfrenta con un `Enemigo` con comportamiento más complejo
 ### Características
 - Arena predeterminada para prevenir comportamientos inesperados de pathfinding y exploits por parte del Jugador.
 - El Final Boss puede alejarse del jugador, sin estar huyendo. Algunos ataques son a distancia, otros de cercanía.
