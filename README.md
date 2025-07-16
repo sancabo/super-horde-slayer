@@ -117,7 +117,7 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 - El Final Boss puede atacar en Melee.
 - State Machine dedicado para decidir sus ataques, junto con un componente Random.
   
-## Misceláneas: Feedback mejorado y Pasivas
+## Feedback mejorado y Pasivas
 Se implementan numerosos efectos visuales y de sonido para mejorar el feedback de las funcionalidades que ya existían.
 ### Nuevas Pasivas de lvl 8 y 16
 > [!NOTE]
@@ -137,6 +137,24 @@ Se implementan numerosos efectos visuales y de sonido para mejorar el feedback d
  |---|---|---|
  | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Tridente | Más lento que la lanza, pero genera un abanico de 3 líneas de AOE.|
  | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Martillo | Súper lento, pero hace daño masivo en un círculo enfrente del portador.|
+
+ ## Quality of life.
+ ### Sound Clutter
+Parar no abrumar con sonidos de enemigos, se centralizan los sonidos de `Taunt` en un `Manager de Taunts`.
+- El  `Manager de Taunts` tiene un `Perfil de Taunt` para cada tipo de Enemigo.
+ - Los enemigos envian solicitudes de emitir sonido a `Manager de Taunts`.
+ - `Manager de Taunts` elige uno de sus Audio Components y en base a parámetros configurables (max distancia, max simultaneos, etc) elige si emitir sonido o no.
+
+  ### Claridad de Stats
+  - En la pantalla de subir stats, cuando se hace Hover sobre el nombre de un stats, se iluminan los valores correspondientes que modificará.
+
+### Relocacion de Enemigos.
+Al haber un límite de enemigos, si el Jugador corría muy lejos, se quedaba sin enemigos hasta que volviera y los mate.
+Para que no queden enemigos perdidos, ahora se relocalizan cada tanto.
+- Se le agrega a cada enemigo un componente independiente de `Relocador`.
+- El `Relocador` trackea cuanto tiempo el enemigo lleva fuera de un rango configurable.
+- Si el enemigo lleva fuera de rango más que un tiempo configurable, se relocaliza.
+- Al relocalizar, aparece cerca del jugador a una distancia configurable.
 
 
 
