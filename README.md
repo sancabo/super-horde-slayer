@@ -4,7 +4,7 @@
 ![Screenshot del juego donde se muestra el inventario abierto, mostrando la interface](https://storage.googleapis.com/santi-documents/ScreenJuego.png)
 <h3>Este Major Update es una ampliación bastante ambiciosa del Juego. La mayor característica que se buscó es la facilidad para implementar más features mediante sistemas modulares y extendibles basados en interfaces.</h3>
 
-## Sistema de inventario
+## Mecánica de Personaje : Sistema de inventario
 
 Se amplía la pantalla de personaje para incluir el inventario.
 ### Características
@@ -17,7 +17,7 @@ Se amplía la pantalla de personaje para incluir el inventario.
 -   Todos los `Items` guardables tienen la `Acción` por default de poder tirarse al piso. (se reutiliza la funcionalidad que tenía el swap de armas)
 -   Armas y Hechizos son `Item` y se pueden cargar múltiples instancias de cada uno.
 
-## Power Ups mediante Sistema de Slots
+## Power Up: Efectos mediante Sistema de Slots
 
 Para los Items del punto anterior, se habilita la opción de asignarle slots, donde se pueden insertar mejoras. Estas mejoras son, a su vez, otros items.
 ### Características
@@ -42,7 +42,7 @@ Para los Items del punto anterior, se habilita la opción de asignarle slots, do
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Mientras que el objeto esté equipado en en L o R Click, otorga aura.|
 
   
-## Extensión de Enemigos: Sistema de Drops
+## Mecánica de Gameplay : Sistema de Drops
 
 Se implementan tablas de drop dinámicas: Antes cada enemigo tenía hardcodeado el item que dropeaba. No se podía cambiar en runtime.
 
@@ -55,14 +55,14 @@ Se implementan tablas de drop dinámicas: Antes cada enemigo tenía hardcodeado 
 -  La `Rareza` de un `Item` mejora sus stats con valores parcialmente random.
 
 
-## Obstáculo: Bulbo Explosivo
+## Obstáculo : Bulbo Explosivo
 Se implementa un objeto que al ser golpeado y destruído explota dañando todo a su alrededor.
 ### Características
 - Se sobreescribe el perfil de enmigo, para conservar vida, drops, etc, pero modificando su comportamiento.
 - El Bulbo siempre permanece inmóvil en un punto determinado, no emite sonidos, no realiza ataques,  y no persigue al Jugador.
 - Al ser destruído explota dañando al Jugador. ( Se reutiliza la explosión de la bola de fuego)
 - 
-## Nuevo sistema de Spawners
+## Mecánica de Gameplay : Nuevo sistema de Encounters
 > [!NOTE]
 > En la version anterior, un `Spawner` generaba enemigos cada x tiempo, con un máximo de enemigos configurable.
 > En ciertos niveles del Jugador, se agregaban más spawners. Se observó en playtesting que los jugadores perdían el sentido de dirección al estar siempre siendo asediados por enemigos, generando una visión de túnel.
@@ -84,7 +84,7 @@ Se implementa un objeto que al ser golpeado y destruído explota dañando todo a
 - Se agrega el estado **--IDLE--** a los `Enemigos`, que hace que permanezcan en su lugar y no persigan al jugador.
 - Cuando un `Enemigo` pasa mucho tiempo lejos del Jugador, se teletrasporta cerca.
 
-## Modo Dios y Modo infinito.
+## Rejugabilidad: Modo Dios y Modo infinito.
 Se implementan dos modos adicionales de juego.
 
 ### Características
@@ -117,9 +117,7 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 - El Final Boss puede atacar en Melee.
 - State Machine dedicado para decidir sus ataques, junto con un componente Random.
   
-## Feedback mejorado y Pasivas
-Se implementan numerosos efectos visuales y de sonido para mejorar el feedback de las funcionalidades que ya existían.
-### Nuevas Pasivas de lvl 8 y 16
+## Power Up: Nuevas Pasivas de lvl 8 y 16
 > [!NOTE]
 > Como algunos efectos otorgados por pasivas se trasladaron al sistema de Slots, en su lugar ahora se agregan las siguientes mejoras
 
@@ -131,14 +129,14 @@ Se implementan numerosos efectos visuales y de sonido para mejorar el feedback d
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash Genera una explosion en los puntos de inicio y fin.|
 
- ### Nuevas Armas
+ ### Power Up : Nuevas Armas
 
  | |Nombre| Descripcion |
  |---|---|---|
  | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Tridente | Más lento que la lanza, pero genera un abanico de 3 líneas de AOE.|
  | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Martillo | Súper lento, pero hace daño masivo en un círculo enfrente del portador.|
 
- ## Quality of life.
+ ## Correcciones indicadas por docente: Quality of life.
  ### Sound Clutter
 Parar no abrumar con sonidos de enemigos, se centralizan los sonidos de `Taunt` en un `Manager de Taunts`.
 - El  `Manager de Taunts` tiene un `Perfil de Taunt` para cada tipo de Enemigo.
