@@ -58,7 +58,7 @@ Se implementan tablas de drop dinámicas: Antes cada enemigo tenía hardcodeado 
 ## Obstáculo : Bulbo Explosivo
 Se implementa un objeto que al ser golpeado y destruído explota dañando todo a su alrededor.
 ### Características
-- Se sobreescribe el perfil de enmigo, para conservar vida, drops, etc, pero modificando su comportamiento.
+- Se abstrae del Enemigo, el comportamiento de poder recibir daño, y se usa como base para este enemigo.
 - El Bulbo siempre permanece inmóvil en un punto determinado, no emite sonidos, no realiza ataques,  y no persigue al Jugador.
 - Al ser destruído explota dañando al Jugador. ( Se reutiliza la explosión de la bola de fuego)
 - 
@@ -84,16 +84,12 @@ Se implementa un objeto que al ser golpeado y destruído explota dañando todo a
 - Se agrega el estado **--IDLE--** a los `Enemigos`, que hace que permanezcan en su lugar y no persigan al jugador.
 - Cuando un `Enemigo` pasa mucho tiempo lejos del Jugador, se teletrasporta cerca.
 
-## Rejugabilidad: Modo Dios y Modo infinito.
+## Rejugabilidad: Modo Dios.
 Se implementan dos modos adicionales de juego.
 
 ### Características
 - En la Pantalla de Game Over, se puede reiniciar la partida en Modo Dios(todo daño recibido se reduce a cero)
-- Al ganar la partida, se puede elegir entrar en Modo Infinito: 
-- Oleadas infinitas de enemigos mediante un Encounter especial que dura indefinidamente.
-- No se limita la cantidad de drops (Excepto por cuestiones de performance)
-- Las fogatas se pueden activar varias veces y su costo aumenta exponencialmente con cada uso.
-- El Modo infinito también aparecerá en el Menu.
+- Para esto se le pasa un flag a la escena de Main Level.
 - 
 ## Enemigo: Bonfire Guardian
 Después de encender cada fogata, Spawnea un nuevo `Enemigo` a modo de mini-boss.
@@ -104,6 +100,7 @@ Después de encender cada fogata, Spawnea un nuevo `Enemigo` a modo de mini-boss
 - Si el Jugador se le acerca, intentará escapar con un Dash (Se adapta método Dash del Jugador)
 - El Dash de este enemigo tiene un cooldown a efectos de balance.
 - Se hace más fuerte por cada fogata encendida.
+- La fogata solo cuenta como encendida cuando este enemigo es derrotado.
   
 ## Enemigo: Final Boss
 Después de encender todas las fogatas, se le indica al jugador que visite un area designada donde se enfrenta con un `Enemigo` con comportamiento más complejo
@@ -115,7 +112,7 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 - El Final Boss puede cargar en linea recta.
 - El FInal Boss puede disparar un proyectil múltiple.
 - El Final Boss puede atacar en Melee.
-- State Machine dedicado para decidir sus ataques, junto con un componente Random.
+- Se aprovecha el stata machine del animator para organizar algunas lógicas.
   
 ## Power Up: Nuevas Pasivas de lvl 8 y 16
 > [!NOTE]
@@ -125,7 +122,7 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 |---|---|---|
 |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Redesign|El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando todos los bonus de ella.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 50% menos de cooldown.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cuando Recolectas Esencia, explota haciendo daño a los enemigos.|
+| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cada 10 segundos, generas un círculo curativo que permanece por 5 segundos|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash Genera una explosion en los puntos de inicio y fin.|
 
@@ -148,11 +145,10 @@ Parar no abrumar con sonidos de enemigos, se centralizan los sonidos de `Taunt` 
 
 ### Relocacion de Enemigos.
 Al haber un límite de enemigos, si el Jugador corría muy lejos, se quedaba sin enemigos hasta que volviera y los mate.
-Para que no queden enemigos perdidos, ahora se relocalizan cada tanto.
+Para que no queden enemigos perdidos, ahora se limpian cada tanto.
 - Se le agrega a cada enemigo un componente independiente de `Relocador`.
 - El `Relocador` trackea cuanto tiempo el enemigo lleva fuera de un rango configurable.
-- Si el enemigo lleva fuera de rango más que un tiempo configurable, se relocaliza.
-- Al relocalizar, aparece cerca del jugador a una distancia configurable.
+- Si el enemigo lleva fuera de rango más que un tiempo configurable, se elimina del juego, sin dar experiencia.
 
 
 
