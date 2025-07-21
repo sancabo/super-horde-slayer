@@ -36,10 +36,10 @@ Para los Items del punto anterior, se habilita la opción de asignarle slots, do
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Knockback.|
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Mana.|
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Vida.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Explosión en base al HP enemigo.|
+ |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Succiona a los enemigos al punto de muerte.|
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Incremento de daño.|
  |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Cada vez que el objeto afectado ataca, tambien genera un ataque por la espalda.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Mientras que el objeto esté equipado en en L o R Click, otorga aura.|
+ |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Mientras que el objeto esté equipado en en L o R Click, otorga regeneración de vida.|
 
   
 ## Mecánica de Gameplay : Sistema de Drops
@@ -61,7 +61,7 @@ Se implementa un objeto que al ser golpeado y destruído explota dañando todo a
 - Se abstrae del Enemigo, el comportamiento de poder recibir daño, y se usa como base para este enemigo.
 - El Bulbo siempre permanece inmóvil en un punto determinado, no emite sonidos, no realiza ataques,  y no persigue al Jugador.
 - Al ser destruído explota dañando al Jugador. ( Se reutiliza la explosión de la bola de fuego)
-- 
+  
 ## Mecánica de Gameplay : Nuevo sistema de Encounters
 > [!NOTE]
 > En la version anterior, un `Spawner` generaba enemigos cada x tiempo, con un máximo de enemigos configurable.
@@ -90,7 +90,7 @@ Se implementan dos modos adicionales de juego.
 ### Características
 - En la Pantalla de Game Over, se puede reiniciar la partida en Modo Dios(todo daño recibido se reduce a cero)
 - Para esto se le pasa un flag a la escena de Main Level.
-- 
+  
 ## Enemigo: Bonfire Guardian
 Después de encender cada fogata, Spawnea un nuevo `Enemigo` a modo de mini-boss.
 ### Características
@@ -120,10 +120,10 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 
 | |Tipo| Descripcion |
 |---|---|---|
-|<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Redesign|El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando todos los bonus de ella.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 50% menos de cooldown.|
+|<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Redesign|El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando 1/3 de los bonus del jugador.|
+| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 25% menos de cooldown.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cada 10 segundos, generas un círculo curativo que permanece por 5 segundos|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño.|
+| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño y atacas 0.15% más rápido.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash Genera una explosion en los puntos de inicio y fin.|
 
  ### Power Up : Nuevas Armas
