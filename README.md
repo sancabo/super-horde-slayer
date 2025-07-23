@@ -62,35 +62,6 @@ Se implementa un objeto que al ser golpeado y destruído explota dañando todo a
 - El Bulbo siempre permanece inmóvil en un punto determinado, no emite sonidos, no realiza ataques,  y no persigue al Jugador.
 - Al ser destruído explota dañando al Jugador. ( Se reutiliza la explosión de la bola de fuego)
   
-## Mecánica de Gameplay : Nuevo sistema de Encounters
-> [!NOTE]
-> En la version anterior, un `Spawner` generaba enemigos cada x tiempo, con un máximo de enemigos configurable.
-> En ciertos niveles del Jugador, se agregaban más spawners. Se observó en playtesting que los jugadores perdían el sentido de dirección al estar siempre siendo asediados por enemigos, generando una visión de túnel.
-> El nuevo sistema busca dirigir mejor la atención del Jugador, y proveer momentos de descanso (para revisar items, tal vez).
-
-### Características
-- Un `Spawner` genera X de un tipo de `Enemigo`, cada Y tiempo. Cuando generó X, se destruye. 
-- Cualquier `Enemigo` puede ser promovido a `Elite`, sin tener que tocar los `Spawners`.
-- Se implementó el componente `Encounter`. Este componente trackea el tiempo desde que se instancia, y tiene una tabla que cada X segundos genera un `Evento`.
-- Los `Eventos` que puede generar un Encounter son:
-    - Spawnear un sólo enemigo de tipo X
-    - Crear e iniciar Spawner de tipo X.
-    - Convertir un Enemigo random en Elite.
-    - Convertir un Enemigo random de tipo X en Elite.
-- Cuando el `Encounter` se queda sin `Eventos` que generar, se destruye.
-- Cada vez que se activa una fogata se inicia un `Encounter`.
-- No es posible encender una fogata mientras exista un `Encounter` activo.
-- Además de los `Encounters`, hay `Enemigos` fijos por el mapa.
-- Se agrega el estado **--IDLE--** a los `Enemigos`, que hace que permanezcan en su lugar y no persigan al jugador.
-- Cuando un `Enemigo` pasa mucho tiempo lejos del Jugador, se teletrasporta cerca.
-
-## Rejugabilidad: Modo Dios.
-Se implementan dos modos adicionales de juego.
-
-### Características
-- En la Pantalla de Game Over, se puede reiniciar la partida en Modo Dios(todo daño recibido se reduce a cero)
-- Para esto se le pasa un flag a la escena de Main Level.
-  
 ## Enemigo: Bonfire Guardian
 Después de encender cada fogata, Spawnea un nuevo `Enemigo` a modo de mini-boss.
 ### Características
@@ -124,7 +95,7 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 25% menos de cooldown.|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cada 10 segundos, generas un círculo curativo que permanece por 5 segundos|
 | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño y atacas 0.15% más rápido.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash Genera una explosion en los puntos de inicio y fin.|
+| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Hsta el 50% del daño recibido consume maná en lugar de vida|
 
  ### Power Up : Nuevas Armas
 
