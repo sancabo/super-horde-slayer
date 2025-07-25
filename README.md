@@ -31,15 +31,15 @@ Para los Items del punto anterior, se habilita la opción de asignarle slots, do
 ### Implementados
 | |Tipo|Efecto|
 |---|---|---|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Golpe crítico.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Prender fuego a los enemigos.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Knockback.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Mana.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Vida.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Succiona a los enemigos al punto de muerte.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Incremento de daño.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Cada vez que el objeto afectado ataca, tambien genera un ataque por la espalda.|
- |<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Mientras que el objeto esté equipado en en L o R Click, otorga regeneración de vida.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e2.png" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Golpe crítico.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e4.png" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Prender fuego a los enemigos.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e5.png" alt="Image 1" style="display:block; margin:auto;">|On Hit Effect |  Knockback.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e7.png" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Mana.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e6.png" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Ganar Vida.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e1.png" alt="Image 1" style="display:block; margin:auto;">|On Kill Effect |  Succiona a los enemigos al punto de muerte.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e3.png" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Incremento de daño.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e8.png" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Cada vez que el objeto afectado ataca, tambien genera un ataque por la espalda.|
+ |<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/e9.png" alt="Image 1" style="display:block; margin:auto;">|Passive Effect |  Mientras que el objeto esté equipado en en L o R Click, otorga regeneración de vida.|
 
   
 ## Mecánica de Gameplay : Sistema de Drops
@@ -91,18 +91,18 @@ Después de encender todas las fogatas, se le indica al jugador que visite un ar
 
 | |Tipo| Descripcion |
 |---|---|---|
-|<img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Redesign|El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando 1/3 de los bonus del jugador.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 25% menos de cooldown.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cada 10 segundos, generas un círculo curativo que permanece por 5 segundos|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño y atacas 0.15% más rápido.|
-| <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Hsta el 50% del daño recibido consume maná en lugar de vida|
+|<img src="https://storage.googleapis.com/santi-documents/IconosJuegos/l1.png" alt="Image 1" style="display:block; margin:auto;"> |Redesign|El summon puede llevar cualquier arma que se le asigne desde el inventario, ganando 1/3 de los bonus del jugador.|
+| <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/c1.png" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Tu Dash hace daño físico y tiene 25% menos de cooldown.|
+| <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/c2.png" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Cada 10 segundos, generas un círculo curativo que permanece por 5 segundos|
+| <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/c3.png" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Por cada 1% de vida faltante, haces 0,5% más de daño y atacas 0.15% más rápido.|
+| <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/l2.png" alt="Image 1" style="display:block; margin:auto;">|Nuevo|Hsta el 50% del daño recibido consume maná en lugar de vida|
 
  ### Power Up : Nuevas Armas
 
  | |Nombre| Descripcion |
  |---|---|---|
- | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Tridente | Más lento que la lanza, pero genera un abanico de 3 líneas de AOE.|
- | <img src="https://via.placeholder.com/100" alt="Image 1" style="display:block; margin:auto;"> |Martillo | Súper lento, pero hace daño masivo en un círculo enfrente del portador.|
+ | <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/i2.png" alt="Image 1" style="display:block; margin:auto;"> |Tridente | Más lento que la lanza, pero genera un abanico de 3 líneas de AOE.|
+ | <img src="https://storage.googleapis.com/santi-documents/IconosJuegos/i1.png" alt="Image 1" style="display:block; margin:auto;"> |Martillo | Súper lento, pero hace daño masivo en un círculo enfrente del portador.|
 
  ## Correcciones indicadas por docente: Quality of life.
  ### Sound Clutter
